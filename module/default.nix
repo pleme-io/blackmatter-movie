@@ -114,7 +114,7 @@ in {
     (mkIf cfg.services.runway.enable {
       blackmatter.components.anvil.mcp.servers.runway = {
         command = "npx";
-        args = [ "-y" "@runwayml/runway-api-mcp-server" ];
+        args = [ "-y" "@addition-works/runway-mcp-server" ];
         envFiles.RUNWAYML_API_SECRET = "${homeDir}/.config/movie/runway/api-key";
         description = "Runway Gen-3 Alpha video generation";
         scopes = [ "movie" ];
@@ -136,7 +136,7 @@ in {
       blackmatter.components.anvil.mcp.servers.stability-ai = {
         command = "npx";
         args = [ "-y" "mcp-server-stability-ai" ];
-        envFiles.STABILITY_API_KEY = "${homeDir}/.config/movie/stability-ai/api-key";
+        envFiles.STABILITY_AI_API_KEY = "${homeDir}/.config/movie/stability-ai/api-key";
         description = "Stability AI image generation (SDXL, SD3)";
         scopes = [ "movie" ];
       };
