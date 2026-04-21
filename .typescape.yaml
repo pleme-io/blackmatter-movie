@@ -1,0 +1,21 @@
+schema_version: 1
+manifest:
+  name: blackmatter-movie
+  kind: BlackmatterComponent
+  archetype: blackmatter-component-hm-only
+  description: AI video production MCP infrastructure (ElevenLabs, Runway, DaVinci, etc.).
+dimensions:
+  vocabulary: [movie, video, elevenlabs, runway, davinci, mcp]
+  domains: [Nix, JSON]
+  stack: [HomeManager]
+  modules:
+    home_manager: module/
+  render:
+    produces:
+      - "~/.config/<agent>/mcp-servers.json (movie servers)"
+  compliance:
+    satisfies: []
+    participates: []
+  dag:
+    inputs: [nixpkgs, substrate]
+  attestation: { merkle_root: null, signed_by: null, producer: blackmatter-component-flake.nix }
